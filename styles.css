@@ -1,0 +1,145 @@
+html {
+    font-size: 4px;
+
+    --content-width-max: 1000px;
+    --box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.05);
+    --color-background: #F1E5D9;
+    --color-card-background: white;
+    --color-text-primary: #52493E;
+    --color-text-secondary: #957878;
+    --color-text-tertiary: #7E7367;
+    --color-text-title: #A69888;
+    --color-divider: #D9D9D9;
+}
+
+body {
+    margin: 0;
+    height: 100dvh;
+    display: flex;
+    background-color: var(--color-background);
+    font-size: 4rem;
+    font-family: Inter, sans-serif;
+    color: var(--color-text-primary);
+}
+
+body,
+body *:not(p, a, b) {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--color-background);
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+}
+
+header h1 {
+    color: var(--color-text-primary);
+    font-family: "Josefin Slab", serif;
+    font-weight: bold;
+    font-size: 12rem;
+    letter-spacing: 1rem;
+    text-align: center;
+}
+
+article {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8rem;
+}
+
+article .content {
+    width: 80%;
+    max-width: var(--content-width-max);
+    flex-direction: row;
+    background-color: var(--color-card-background);
+    box-shadow: var(--box-shadow);
+    border-radius: 4rem;
+    overflow: hidden;
+}
+
+article #portrait-wrapper {
+    flex: 1;
+    min-width: 70rem;
+}
+
+article #portrait-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+article section {
+    flex: 2;
+    margin: 8rem;
+    gap: 5rem;
+}
+
+article section p {
+    color: var(--color-text-secondary);
+    font-size: 4rem;
+    line-height: 6rem;
+    margin: 0;
+}
+
+article section p b {
+    color: var(--color-text-primary);
+}
+
+footer {
+    background-color: var(--color-text-primary);
+    justify-content: center;
+    align-items: center;
+}
+
+#uade-logo {
+    width: 100px;
+    margin: 8rem 0;
+}
+
+a {
+    flex-direction: row;
+    align-self: flex-start;
+    align-items: center;
+    color: var(--color-text-tertiary);
+    gap: 1rem;
+    text-decoration: none;
+    transition: ease-in color .1s;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 1px transparent;
+    transition: ease-in border-bottom-color .1s;
+}
+
+a:hover {
+    border-bottom-color: var(--color-text-tertiary);
+}
+
+img.inline-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+    header h1 {
+        font-size: 8rem;
+    }
+
+    article {
+        margin: 8rem;
+    }
+
+    article .content {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    article #portrait-wrapper {
+        min-width: initial;
+        max-height: 100rem;
+    }
+}
